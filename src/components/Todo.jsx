@@ -45,25 +45,23 @@ const Todo = () => {
     },[todolist])
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-     <div className = "bg-white place-self-center w-full max-w-md flex flex-col p-4 sm:p-6 min-h-[550px] rounded-xl shadow-lg mx-2">
-      <div className='flex items-center ml-4 mt-7 gap-2'>
-        <img src={tarea} alt='tarea' className='w-8'/>
-        <h1 className='text-2xl font-semibold'>TAREAS</h1>
-      </div>
-        <div className='flex items-center mx-4 md:my-6 mt-6 bg-gray-700 rounded-full p-1'>
-          <input ref={inputRef} className='bg-transparent border-0 outline-none flex-1 h-14 pl-6 pr-2 placeholder:text-slate-600' type='text' placeholder='Add your task'/>
-          <button onClick={add} className='border-none rounded-full bg-orange-600 w-32 h-14 text-white text-lg font-medium cursor-pointer sm:mt-1 md:mt-0 md:ml-4'>ADD +</button>
+    <div className="flex justify-center items-center min-h-screen px-4">
+          <div className="bg-white w-full max-w-md flex flex-col p-6 sm:p-4 min-h-[550px] rounded-xl shadow-lg overflow-x-hidden">
+            <div className='flex items-center mb-4'>
+              <img src={tarea} alt='tarea' className='w-8'/>
+              <h1 className='text-2xl font-semibold ml-2'>TAREAS</h1>
+            </div>
+            <div className='flex items-center mb-6 bg-gray-700 rounded-full overflow-x-hidden'>
+              <input ref={inputRef} className='bg-transparent border-0 outline-none flex-1 h-12 pl-4 pr-2 placeholder:text-slate-600' type='text' placeholder='Add your task'/>
+              <button onClick={add} className='border-none rounded-full bg-orange-600 px-6 h-12 text-white text-lg font-medium'>ADD</button>
+            </div>
+            <div className='space-y-4'>
+              {todolist.map((item, index) => {
+                return <TodoItems key={index} text={item.text} id={item.id} isComplete={item.isComplete} deleteTodo={deleteTodo} toggle={toggle} />
+              })}
+            </div>
+          </div>
         </div>
-
-        <div className='ml-4 mr-4'>
-            {todolist.map((item, index)=>{
-                return <TodoItems key={index} text={item.text} id={item.id} isComplete={item.isComplete} deleteTodo={deleteTodo} toggle={toggle}/>
-            })}
-            
-        </div>
-      </div>
-    </div>
   )
 }
 
