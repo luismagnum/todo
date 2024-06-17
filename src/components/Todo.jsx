@@ -49,7 +49,7 @@ const Todo = () => {
           <div className="bg-white w-full max-w-md flex flex-col p-6 sm:p-4 min-h-[550px] rounded-xl shadow-lg overflow-x-hidden">
             <div className='flex items-center mb-4'>
               <img src={tarea} alt='tarea' className='w-8'/>
-              <h1 className='text-2xl font-semibold ml-2'>TAREAS</h1>
+              <h1 className='text-2xl font-semibold ml-2'>TAREAS<span className='text-sm ml-6 text-[#091540]'>dev Luis diaz.</span></h1>
             </div>
             <div className='flex items-center mb-6 bg-gray-700 rounded-full overflow-x-hidden'>
               <input ref={inputRef} className='bg-transparent border-0 outline-none text-white flex-1 h-12 pl-4 pr-2 placeholder:text-slate-600' type='text' placeholder='Add your task'/>
